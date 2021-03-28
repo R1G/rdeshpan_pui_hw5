@@ -56,28 +56,6 @@ a.button:hover {
     box-shadow: 0px 10px #888888;
 }
 
-
-table {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    border: 1px solid black;
-    background-color: darkcyan;
-    
-}
-
-table td, th {
-    padding: 25px;
-    border: 1px solid white;
-    font-size: 24px;
-    color: white;
-    opacity: 0.9;
-}
-
-table a {
-    color: white;
-}
-
 .escape {
     display: block;
     font-size: 20px;
@@ -88,3 +66,46 @@ table a {
 .grey {
     background-color: gray;
 }
+
+.grid {
+    border: 2px white solid;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 15% 15% 35%;
+    grid-template-rows: 800px;
+  }
+
+  .column {
+    background-color: lightblue;
+    color: black;
+    border-radius: 5px;
+    border: 2px white solid;
+  }
+
+  .box {
+      height: 24%;
+      background-color: grey;
+      margin: 2%;
+      text-align:center;
+      font-size: 25px;
+      color: white;
+  }
+
+  .product-image {
+      max-width: 60%;
+      max-height: 60%;
+  }
+
+  .pricing {
+      text-align: right;
+      margin: 2%;
+  }
+
+  .add-to-cart {
+      text-align: right;
+      background-color: greenyellow;
+      width: 45%;
+      float: right;
+      margin: 2%;
+      padding: 2%;
+  }
