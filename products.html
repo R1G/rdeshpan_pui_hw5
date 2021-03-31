@@ -8,65 +8,73 @@
     <meta name="author" content="Rigved Deshpande">
 
     <link rel="stylesheet" href="styles.css">
+    </script>
 
   </head>
 
   <body>
+    <!-- logo -->
     <a href="index.html" class="logo" id="small-logo">
       <h1>Muddy Paws</h1>
       <h2>Adventure Gear</h2>
     </a>
     <br>
+
+    <!-- products display grid -->
     <div class="products">
 
       <div class="column">
-        <div class="product-box">
-          <a href="dog_harness.html" class="product">
-            <h2>Dog Harness</h2>
-            <img class="product-image" src="Images/dog_harness.jpg" alt="dog harness"/>
-          </a>
+        <div class="product-box" data-product-name="dog_harness">
+          <h2  data-product-name="dog_harness">Dog Harness</h2>
+          <img class="product-image" src="Images/dog_harness.jpg" alt="dog wearing dog harness"  data-product-name="dog_harness"/>
         </div>
 
-        <div class="product-box">
-          <a href="water_storage.html" class="product">
-            <h2>Water Storage</h2>
-            <img class="product-image" src="Images/water_storage.jpg" alt="water_storage"/>
-          </a>
+        <div class="product-box" data-product-name="water_storage">
+          <h2 data-product-name="water_storage">Water Storage</h2>
+          <img class="product-image" src="Images/water_storage.jpg" alt="pouch for water storage" data-product-name="water_storage"/>
         </div>
       </div>
 
+
       <div class="column">
-        <div class="product-box">
-          <a href="cat_harness.html" class="product">
-            <h2>Cat Harness</h2>
-            <img class="product-image" src="Images/cat_harness.jpg" alt="cat harness"/>
-          </a>
+        <div class="product-box" data-product-name="cat_harness">
+          <h2 data-product-name="cat_harness">Cat Harness</h2>
+          <img class="product-image" src="Images/cat_harness.jpg" alt="cat wearing cat harness" data-product-name="cat_harness"/>
         </div>
 
-        <div class="product-box">
-          <a href="gps_tracker.html" class="product">
-            <h2>GPS Tracker</h2>
-            <img class="product-image" src="Images/gps_tracker.jpg" alt="gps tracker"/>
-          </a>
+        <div class="product-box" data-product-name="gps_tracker">
+          <h2 data-product-name="gps_tracker">GPS Tracker</h2>
+          <img class="product-image" src="Images/gps_tracker.jpg" alt="gps tracker and phone" data-product-name="gps_tracker"/>
         </div>
       </div>
 
+
       <div class="column">
-        <div class="product-box">
-          <a href="food_storage.html" class="product">
-            <h2>Food Storage</h2>
-            <img class="product-image" src="Images/food_storage.jpg" alt="food storage"/>
-          </a>
+        <div class="product-box" data-product-name="food_storage">
+          <h2 data-product-name="food_storage">Food Storage</h2>
+          <img class="product-image" src="Images/food_storage.jpg" alt="pouches to store food in" data-product-name="food_storage"/>
         </div>
 
-        <div class="product-box">
-          <a href="cat_backpack.html" class="product">
-            <h2>Cat Backpack</h2>
-            <img class="product-image" src="Images/cat_backpack.jpg" alt="cat backpack"/>
-          </a>
+        <div class="product-box" data-product-name="cat_backpack">
+          <h2 data-product-name="cat_backpack">Cat Backpack</h2>
+          <img class="product-image" src="Images/cat_backpack.jpg" alt="cat next to cat backpack" data-product-name="cat_backpack"/>
         </div>
       </div>
     </div>
+
+    <script>
+
+      (function() {
+        const productsContainer = document.querySelector('.products');
+        productsContainer.addEventListener('click', function(event) {
+          var productName = event.target.getAttribute('data-product-name');
+          localStorage.setItem('selectedProduct', productName);
+          console.log(productName);
+          window.location.href = "purchase.html"
+        });
+      }());
+
+    </script>
     
   </body>
 </html>

@@ -22,9 +22,9 @@
 
     <div class="purchase-options">
       <!-- product image-->
-      <div class="column">
-        <h1>Dog Harness</h1>
-        <img class="product-image" src="Images/dog_harness.jpg" alt="dog harness"/>
+      <div class="column product-view">
+        <!--h1>Dog Harness</h1-->
+        <!--img class="product-image" src="Images/dog_harness.jpg" alt="dog harness"/-->
       </div>
 
       <!-- sizes-->
@@ -45,10 +45,10 @@
 
       <div class="column">
         <div class="pricing">
-          <h1>$34.99</h1>
+          <!--h1>$34.99</h1-->
         </div>
 
-        <a href="dog_harness.html" class="button green right">Add to Cart</a>
+        <a href="purchase.html" class="button green right">Add to Cart</a>
         <a href="checkout.html" class="button orange right">Checkout</a>
 
       </div>
@@ -57,6 +57,13 @@
     <script>
 
     (function() {
+
+        const productViewContainer = document.querySelector('.product-view');
+        const selectedProduct = localStorage.getItem('selectedProduct');
+        productViewContainer.insertAdjacentHTML('beforeend', `<h1>${selectedProduct}</h1>`);
+        var imagePath = "Images/" + selectedProduct + ".jpg";
+        productViewContainer.insertAdjacentHTML('beforeend', `<img class="product-image" src=${imagePath}>`);
+
         const boxesContainer = document.querySelector('.size-boxes');
         let selectedSizeBox;
 
